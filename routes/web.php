@@ -21,4 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/',function(){
     return view('HomePage');
 });
-Route::resource('CakesController');
+Route::get('/admin','Admin/HomePage@index');
