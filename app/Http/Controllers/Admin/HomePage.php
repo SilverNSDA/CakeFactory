@@ -8,7 +8,13 @@ use App\Http\Controllers\Controller;
 class HomePage extends Controller
 {
     //
-    public function index(){
-        return view('Admin/Homepage');
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
+    public function index(){
+        return redirect('admin/HomePage');
+    }
+
+
 }

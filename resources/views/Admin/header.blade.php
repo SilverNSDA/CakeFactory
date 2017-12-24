@@ -9,8 +9,10 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link href="css/custom-style.css" type="text/css" rel="stylesheet"/>
         <!-- Styles -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        
         <style>
             html, body {
                 background-color: #fff;
@@ -65,6 +67,13 @@
         </style>
     </head>
     <body>
+        <div class="left-space"></div>
+        <div class="right-space"></div>
+        @include('include/navigation')
+        <hr>
         @yield('body')
+        <hr>
+        <a style="position:absolute; bottom:20px; right:20px;">Made by 1560008</a>
+        
     </body>
 </html>
