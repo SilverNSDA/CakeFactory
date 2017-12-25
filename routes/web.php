@@ -25,4 +25,10 @@ Route::get('/home',function(){
     return redirect('/');
 });
 Route::get('/admin','Admin\HomePage@index');
-Route::get('/admin/cakes','CakesController@index');
+
+Route::resource('/admin/cakes', 'CakesController');
+Route::get('/logout','HomeController@logout');
+Route::get('/404',function(){
+    return view('404');
+});
+

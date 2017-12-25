@@ -52,6 +52,8 @@ class CakesController extends Controller
     public function show($id)
     {
         //
+        $cake = cakes::find($id);
+        return view('Admin.Cakes.show')->with('cake',$cake);
     }
 
     /**

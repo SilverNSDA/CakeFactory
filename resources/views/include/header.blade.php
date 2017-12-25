@@ -9,8 +9,9 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link href="css/custom-style.css" type="text/css" rel="stylesheet"/>
+        <link href="{{asset('css/custom-style.css')}}" type="text/css" rel="stylesheet"/>
         <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         
         <style>
@@ -69,11 +70,14 @@
     <body>
         <div class="left-space"></div>
         <div class="right-space"></div>
+        <div class="top-space"></div>
         @include('include/navigation')
         <hr>
-        @yield('body')
+        <div style="min-height:300px;">
+            @yield('body')
+        </div>
         <hr>
-        <div id="footer">
+        <div id="footer" style="bottom:0px; font-weight:500; color:rgb(30,30,30);">
             <div class="center under-line">
                 About us
             </div>

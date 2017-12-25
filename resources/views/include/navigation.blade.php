@@ -9,7 +9,7 @@
         </div>
         <div class="top-right links">
             @auth
-                <a href="{{ url('/') }}">Home</a>
+                <a href="/logout">Logout</a>
             @else
                 <a href="{{ route('login') }}">Login</a>
                 <a href="{{ route('register') }}">Register</a>
