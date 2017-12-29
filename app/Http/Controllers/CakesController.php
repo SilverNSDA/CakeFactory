@@ -18,7 +18,7 @@ class CakesController extends Controller
      */
     public function index()
     {
-        $cakes = cakes::all();
+        $cakes = cakes::orderBy('name','desc')->paginate(10);
         return view('Admin/Cakes/index')->with('cakes',$cakes);
     }
 

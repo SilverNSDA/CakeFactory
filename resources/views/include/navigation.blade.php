@@ -9,6 +9,9 @@
         </div>
         <div class="top-right links">
             @auth
+                @if (Auth::user()->admin)
+                    <a href="/admin"><i class="fa fa-caret-down"></i> Administator</a>
+                @endif
                 <a href="/logout">Logout</a>
             @else
                 <a href="{{ route('login') }}">Login</a>

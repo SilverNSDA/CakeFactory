@@ -1,3 +1,10 @@
+.space {
+    clear: both;
+    padding:3px;
+}
+.div-space {
+    padding: 10px;
+}
 .left-space {
     display: inline-block;
     padding: 3px;
@@ -24,4 +31,19 @@
 }
 .under-line {
     text-decoration: underline;
+}
+.bottom {
+    position: absolute;
+    bottom: 2px;
+    right:25px;
+}
+.tag-border {
+    min-height: 150px !important;
+    border: 2px;
+    border-width: 4px;
+    border-style: groove;
+    border-radius: 20px;
+}
+.adminstrator-dropdown {
+    position: relative;
 }
