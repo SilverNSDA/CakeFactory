@@ -1010,6 +1010,7 @@ try {
   window.$ = window.jQuery = __webpack_require__(14);
 
   __webpack_require__(15);
+  // require('bootstrap');
 } catch (e) {}
 
 /**

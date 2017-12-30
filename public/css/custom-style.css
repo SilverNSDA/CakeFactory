@@ -44,6 +44,81 @@
     border-style: groove;
     border-radius: 20px;
 }
-.adminstrator-dropdown {
+
+
+/* addition for app.css */
+.links  a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.links > div {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    min-height: 150px;
+    
+}
+.links > div > div {
+    display: none;
+    position: absolute;
+    top:20px;
+    border-width:3px;
+    border-radius: 5px;
+    border-style: groove; 
+    text-align: left;
+    left:-150px;
+}
+.links > div > div > a {
+    display: inline-block;
+    width: auto;
+    padding:20px;
+}
+.links > div:hover > div {
+    display: block;
+    overflow: auto;
+}
+.kanban {
+    padding:10px;
+    text-align: center;
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.kanban > div {
+    width:120px;
+    padding:5px;
+    display:inline-block;
+    min-height: 120px;
     position: relative;
 }
+.kanban > div > a {
+    position: static;
+    bottom: 5px;
+    text-align: center;
+}
+.kanban > div > img {
+    background-color: green;
+    height:80px;
+    width:80px;
+}
+.kanban > a {
+    display: block;
+    padding-bottom: 20px;
+    font-size:30px;
+    text-align: left;
+}
+
+

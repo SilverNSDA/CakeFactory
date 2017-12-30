@@ -12,8 +12,11 @@ class HomePage extends Controller
     {
         $this->middleware('auth');
     }
+    public function home(){
+        return view('Admin/HomePage');
+    }
     public function index(){
-        return redirect('admin/HomePage');
+        return redirect('/admin');
     }
 
 

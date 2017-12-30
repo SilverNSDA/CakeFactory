@@ -24,9 +24,13 @@ Route::get('/',function(){
 Route::get('/home',function(){
     return redirect('/');
 });
-Route::get('/admin','Admin\HomePage@index');
+Route::get('/admin','Admin\HomePage@home');
+Route::get('/admin/home','Admin\Homepage@index');
 
 Route::resource('/admin/cakes', 'CakesController');
+Route::resource('/admin/chefs', 'ChefsController');
+Route::resource('/admin/categories', 'CategotryController');
+// Route::resource('/admin/user', 'UserController');
 Route::get('/logout','HomeController@logout');
 Route::get('/404',function(){
     return view('404');
