@@ -29,7 +29,7 @@ Route::get('/admin/home','Admin\Homepage@index');
 
 Route::resource('/admin/cakes', 'CakesController');
 Route::resource('/admin/chefs', 'ChefsController');
-Route::resource('/admin/categories', 'CategotryController');
+Route::resource('/admin/categories', 'CategoryController');
 // Route::resource('/admin/user', 'UserController');
 Route::get('/logout','HomeController@logout');
 Route::get('/404',function(){

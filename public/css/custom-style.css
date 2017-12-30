@@ -75,7 +75,9 @@
     border-radius: 5px;
     border-style: groove; 
     text-align: left;
-    left:-150px;
+    left:-50px;
+    z-index: 10;
+    background-color: white;
 }
 .links > div > div > a {
     display: inline-block;
@@ -99,18 +101,31 @@
 }
 .kanban > div {
     width:120px;
-    padding:5px;
+    margin:20px;
+    margin-left: 50px;
     display:inline-block;
     min-height: 120px;
     position: relative;
+}
+.kanban > div > a.link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    text-decoration: none;
+    z-index:10;
+    background-color: rgba(255, 255, 255, 0);
 }
 .kanban > div > a {
     position: static;
     bottom: 5px;
     text-align: center;
+    font-size:15px;
+    line-height: 30px;
 }
 .kanban > div > img {
-    background-color: green;
+    /* background-color: green; */
     height:80px;
     width:80px;
 }
@@ -120,5 +135,76 @@
     font-size:30px;
     text-align: left;
 }
-
-
+span.error {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.kanban > div > span.description {
+    display: inline-block;
+    /* line-height: 20px; */
+    width: 20ch;
+    height: 5ch;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+div.table {
+    border-style:groove;    
+    margin-left: 30px;
+    position: absolute;
+    padding:10px;
+    /* text-align: center; */
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 60%;
+}
+div.table > a.name {
+    display: inline-block;
+    width: 80%;
+    line-height: 30px;
+    font-size: 28px;
+    /* text-align: center; */
+    padding-left:20%;
+}
+div.table > a {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+}
+div.table > a > b.tag {
+    display: inline-block;
+    width: 150px;
+    /* text-align: center; */
+}
+div.table > a > b.context {
+    display: inline-block;
+    padding-left: 30%;
+}
+div.table > a.text {
+    height:80px;
+}
+div.table > a.text > b.tag {
+    height: 80px;
+    position: absolute;
+}
+div.table > a.text > b.context {
+    height: 80px;
+    padding: 0;
+}
+.big {
+    /* font-size: 20px !important; */
+    position: relative;
+    left: -300px;
+}

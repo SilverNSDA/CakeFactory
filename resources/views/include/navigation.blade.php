@@ -12,6 +12,7 @@
             @auth
                 @if (Auth::user()->admin)
                 <div style="display:inline-block;">
+                    <a href="/">Frontpage</a>
                     <a class="" href="/admin"><i class="fa fa-caret-down"></i> Administator</a>
                     <div>
                         <a href="/admin">Home</a>
