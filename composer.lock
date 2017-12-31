@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "be0034dded5be4fdfdf29ad286b750d3",
+    "content-hash": "5771033f8fb07cf69db71329b4f42d0f",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -710,52 +710,6 @@
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "http://laravelcollective.com",
             "time": "2017-08-31T14:46:03+00:00"
-        },
-        {
-            "name": "laravelnews/laravel-twbs4",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravelnews/laravel-twbs4.git",
-                "reference": "ed2e58006dc39bae70ef2cbde42a800e00d4d3e7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravelnews/laravel-twbs4/zipball/ed2e58006dc39bae70ef2cbde42a800e00d4d3e7",
-                "reference": "ed2e58006dc39bae70ef2cbde42a800e00d4d3e7",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "~5.5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "LaravelNews\\Presets\\BootstrapFour\\BootstrapPresetServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "LaravelNews\\Presets\\BootstrapFour\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Paul Redmond",
-                    "email": "paulrredmond@gmail.com"
-                }
-            ],
-            "description": "Laravel 5 frontend preset for Twitter Bootstrap 4",
-            "time": "2017-12-27T19:55:00+00:00"
         },
         {
             "name": "league/flysystem",
@@ -2592,6 +2546,52 @@
                 "test"
             ],
             "time": "2016-01-20T08:20:44+00:00"
+        },
+        {
+            "name": "laravelnews/laravel-twbs4",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravelnews/laravel-twbs4.git",
+                "reference": "ed2e58006dc39bae70ef2cbde42a800e00d4d3e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravelnews/laravel-twbs4/zipball/ed2e58006dc39bae70ef2cbde42a800e00d4d3e7",
+                "reference": "ed2e58006dc39bae70ef2cbde42a800e00d4d3e7",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "LaravelNews\\Presets\\BootstrapFour\\BootstrapPresetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelNews\\Presets\\BootstrapFour\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Redmond",
+                    "email": "paulrredmond@gmail.com"
+                }
+            ],
+            "description": "Laravel 5 frontend preset for Twitter Bootstrap 4",
+            "time": "2017-12-27T19:55:00+00:00"
         },
         {
             "name": "mockery/mockery",

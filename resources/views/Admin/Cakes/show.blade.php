@@ -1,6 +1,7 @@
 @extends('Admin\header')
 @section('body')
-<p class="big"><a class="btn btn-secondary" role="button" href=".">Back</a></p>
+<a class="btn btn-secondary btn-lg" role="button" href=".">Back</a>
+<a class="btn btn-primary btn-lg" role="button" href="./{{$cake->id}}/edit">Edit cake</a>
     @if(empty($cake))
         <h2><a>Cake not found</a></h2>
     @else

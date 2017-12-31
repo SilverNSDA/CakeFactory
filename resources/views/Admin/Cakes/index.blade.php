@@ -4,17 +4,17 @@
     <div class="div-space"></div>
     @if(count($cakes)>0)
         <div class="col-12" style="position:relative; bottom: 20px;">
-                <p class=""><a class="btn btn-primary" role="button" href="cakes/new">New cake</a></p>
+                <p class=""><a class="btn btn-primary btn-lg" role="button" href="cakes/create">New cake</a></p>
             {{$cakes->links()}}
         </div>
         <div class="kanban">
                 @foreach($cakes as $cake)
                 <div class="tag-border" style="width:200px; height:100px;">
                     <h2>{{$cake->name}}</h2>
+                    <small>{{$cake->base_type}}</small>
                     @if($cake->description)
-                    <a>{{$cake->description}}</a>
+                    <span class="description">{{$cake->description}}</span>
                     @endif
-                    <span class="description">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
                     <p class="bottom"><a class="btn btn-secondary" role="button" href="cakes/{{$cake->id}}">View details »</a></p>
                 </div>
                 @endforeach

@@ -7,12 +7,11 @@
             <a href="/cart">Cart</a>
             <a class="scroll" href="#footer">About</a>
         </div>
-        <div class="top-right links">
+        <div class="top-right links row">
             
             @auth
                 @if (Auth::user()->admin)
                 <div style="display:inline-block;">
-                    <a href="/">Frontpage</a>
                     <a class="" href="/admin"><i class="fa fa-caret-down"></i> Administator</a>
                     <div>
                         <a href="/admin">Home</a>
@@ -21,7 +20,9 @@
                         <a href="/admin/categories">Categories</a>
                         {{--  <a href="/admin/user">User</a>  --}}
                     </div>
+
                 </div>
+                <a href="/">Frontpage</a>
 
                 @endif
                 <a href="/logout">Logout</a>

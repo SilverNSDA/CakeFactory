@@ -74,9 +74,10 @@
         
         @include('include/navigation')
         <hr>
+        @include('include.err')
         @yield('body')
 
-        <a style="position:absolute; bottom:20px; right:20px;">Made by 1560008</a>
+        <a style="position:fixed; bottom:20px; right:20px;">Made by 1560008</a>
         
         
     </body>

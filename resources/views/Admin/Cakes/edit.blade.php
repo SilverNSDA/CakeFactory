@@ -2,7 +2,7 @@
 @section('body')
 <p class="big"><a class="btn btn-secondary" role="button" href=".">Back</a></p>
         <div class="table">
-            <a class="name">Make a new cake</a>
+            <a class="name">Make a change...</a>
             {!! Form::open(['action' => 'CakesController@store', 'method' => 'POST']) !!}
             <div class="form-group">
                 {!! Form::label('name', 'Cake name') !!}
@@ -22,7 +22,7 @@
             </div>
             <div class="bottom-right">
                 {!! Form::submit('Make a new cake', ['class'=>'btn btn-primary btn-lg']) !!}
-                {!! Form::reset('Clear form',['class'=>'btn btn-sencondary btn-lg']) !!}
+                {{--  {!! Form::reset('Clear form',['class'=>'btn btn-sencondary btn-lg']) !!}  --}}
             </div>
             {!! Form::close() !!}
         </div>

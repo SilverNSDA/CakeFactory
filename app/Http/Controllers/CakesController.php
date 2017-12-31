@@ -7,10 +7,10 @@ use App\cakes;
 
 class CakesController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -30,6 +30,7 @@ class CakesController extends Controller
     public function create()
     {
         //
+        return view('Admin\Cakes\create');
     }
 
     /**
@@ -41,6 +42,20 @@ class CakesController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'name' =>'required',
+            'type' =>'required',
+            'description'=>'required'
+        ]);
+        $cake = new Cakes;
+        $cake->name=$request->input('name');
+        $cake->price=$request->input('price');
+        $cake->description=$request->input('description');
+        $cake->base_type=$request->input('type');
+        $cake->in_storage=0;
+        $cake->save();
+        return redirect('/admin/cakes')->with('success','You have made a cake');
+
     }
 
     /**
@@ -65,6 +80,7 @@ class CakesController extends Controller
     public function edit($id)
     {
         //
+        return view('Admin.Cakes.edit');
     }
 
     /**

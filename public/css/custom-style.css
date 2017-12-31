@@ -45,7 +45,14 @@
     border-radius: 20px;
 }
 
-
+a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+}
 /* addition for app.css */
 .links  a {
     color: #636b6f;
@@ -64,7 +71,7 @@
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
-    min-height: 150px;
+    /* min-height: 150px; */
     
 }
 .links > div > div {
@@ -197,7 +204,7 @@ div.table > a.text {
 }
 div.table > a.text > b.tag {
     height: 80px;
-    position: absolute;
+    position: relative;
 }
 div.table > a.text > b.context {
     height: 80px;
@@ -207,4 +214,7 @@ div.table > a.text > b.context {
     /* font-size: 20px !important; */
     position: relative;
     left: -300px;
+}
+.bottom-right {
+    text-align: right;
 }
