@@ -45,7 +45,8 @@ class CakesController extends Controller
         $this->validate($request, [
             'name' =>'required',
             'type' =>'required',
-            'description'=>'required'
+            'description'=>'required',
+            'price'=>'numeric'
         ]);
         $cake = new Cakes;
         $cake->name=$request->input('name');
@@ -80,7 +81,8 @@ class CakesController extends Controller
     public function edit($id)
     {
         //
-        return view('Admin.Cakes.edit');
+        $cake = Cakes::find($id);
+        return view('Admin.Cakes.edit')->with('cake',$cake);
     }
 
     /**
@@ -93,6 +95,19 @@ class CakesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'name' =>'required',
+            'type' =>'required',
+            'description'=>'required',
+            'price'=>'numeric'
+        ]);
+        $cake = Cakes::find($id);
+        $cake->name=$request->input('name');
+        $cake->price=$request->input('price');
+        $cake->description=$request->input('description');
+        $cake->base_type=$request->input('type');
+        $cake->save();
+        return redirect('/admin/cakes')->with('success','You have changed a cake');
     }
 
     /**
@@ -104,5 +119,8 @@ class CakesController extends Controller
     public function destroy($id)
     {
         //
+        $cake = cakes::find($id);
+        $cake->delete();
+        return redirect('/admin/cakes')->with('success','Cake deleted');
     }
 }

@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
                 {!! Form::label('price', 'Price') !!}
-                {!! Form::text('price', '', ['class'=>'form-control', 'placeholder'=>'How much....']) !!}
+                {!! Form::text('price', 0, ['class'=>'form-control', 'placeholder'=>'How much....']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('description', 'Description') !!}
