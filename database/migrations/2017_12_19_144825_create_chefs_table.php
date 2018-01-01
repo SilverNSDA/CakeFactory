@@ -26,6 +26,10 @@ class CreateChefsTable extends Migration
             $table->string('Address2',100)->charset('utf8')->nullable()->comment('address line 2: city,zip,country');
             $table->timestamps();
         });
+        Artisan::call('db:seed',[
+            '--class'=>'ChefSeeder',
+            '--force'=>True
+        ]);
     }
 
     /**
