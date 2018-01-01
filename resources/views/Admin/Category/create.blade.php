@@ -6,11 +6,11 @@
             {!! Form::open(['action' => 'CategoryController@store', 'method' => 'POST']) !!}
             <div class="form-group">
                 {!! Form::label('name', 'Category name') !!}
-                {!! Form::text('name', '', ['class'=>'form-control', 'placeholder'=>'What will you name our new cake...']) !!}
+                {!! Form::text('name', '', ['class'=>'form-control', 'placeholder'=>'What will you name our new categry...']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('tag', 'Category tag') !!}
-                {!! Form::text('tag', '', ['class'=>'form-control', 'placeholder'=>'What is it alike...']) !!}
+                {!! Form::text('tag', '', ['class'=>'form-control', 'placeholder'=>'Add its short name...']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('description', 'Description') !!}

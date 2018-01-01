@@ -12,7 +12,7 @@
             <a><b class="tag">Type: </b><b class="context">{{$cate->base_type}}</b></a>
             <a><b class="tag">Price: </b><b class="context">{{$cate->tag}}$</b></a>
             <a class="text"><b class="tag">Description: </b><b class="context">{{$cate->description}}</b></a>
-            {!! Form::open(['action'=>['CakesController@destroy',$cate->id],'method'=>'POST','class'=>'pull=right']) !!}
+            {!! Form::open(['action'=>['CategoryController@destroy',$cate->id],'method'=>'POST','class'=>'pull=right']) !!}
             {!! Form::hidden('_method', 'DELETE') !!}
             {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-lg']) !!}
             {!! Form::close() !!}

@@ -16,9 +16,9 @@ class CreateChefsTable extends Migration
         Schema::create('chefs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Firstname',50)->charset('utf8');
-            $table->string('Lastname',50)->charset('utf8')->nullable();
-            $table->string('Middlename',10)->charset('utf8');
-            $table->char('Title',5);
+            $table->string('Lastname',50)->charset('utf8');
+            $table->string('Middlename',10)->charset('utf8')->nullable();
+            $table->char('Title',5)->nullable();
             $table->char('Mobile',15)->nullable();
             $table->char('Home_phone',15)->nullable();
             $table->char('Fax',20)->nullable();

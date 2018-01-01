@@ -23,6 +23,10 @@ class CreateCakesTable extends Migration
             $table->float('price',8,2)->nullable();
             $table->timestamps();
         });
+        Artisan::call('db:seed',[
+            '--class'=>'CakesSeeder',
+            '--force'=>True
+        ]);
     }
 
     /**
