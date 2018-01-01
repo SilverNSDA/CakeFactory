@@ -9,7 +9,7 @@ class ChefsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('Admin');
     }
     /**
      * Display a listing of the resource.
@@ -19,8 +19,8 @@ class ChefsController extends Controller
     public function index()
     {
         //
-        $cates = Category::orderBy('tag','desc')->paginate(10);
-        return view('Admin/Category/index')->with('cates',$cates);
+        $chefs = Chefs::orderBy('Firstname','desc')->paginate(10);
+        return view('Admin/Chef/index')->with('chefs',$chefs);
     }
 
     /**
@@ -48,7 +48,7 @@ class ChefsController extends Controller
             'firstname'=>'required'
         ]);
         $chef = new Chefs; 
-        $chef->Firsname=$request->input('firstname');
+        $chef->Firstname=$request->input('firstname');
         $chef->Lastname=$request->input('lastname');
         $chef->Middlename=$request->input('middlename');
         $chef->Title=$request->input('title');
@@ -70,7 +70,7 @@ class ChefsController extends Controller
     public function show($id)
     {
         //
-        $chef=Category::find($id);
+        $chef=Chefs::find($id);
         return view('Admin.Chef.show')->with('chef',$chef);
     }
 
@@ -83,7 +83,7 @@ class ChefsController extends Controller
     public function edit($id)
     {
         //
-        $chef=Category::find($id);
+        $chef=Chefs::find($id);
         return view('Admin.Chef.edit')->with('chef',$chef);
     }
 
@@ -124,7 +124,7 @@ class ChefsController extends Controller
     public function destroy($id)
     {
         //
-        $chef=Category::find($id);
+        $chef= Chefs::find($id);
         $chef->delete();
         return redirect('admin/chefs')->with('success','Chef deleted');
     }

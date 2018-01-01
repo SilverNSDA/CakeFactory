@@ -2,9 +2,10 @@
 @section('body')
     <h2>Cakes list</h2>
     <div class="div-space"></div>
+    <p class=""><a class="btn btn-primary btn-lg" role="button" href="cakes/create">New cake</a></p>
     @if(count($cakes)>0)
         <div class="col-12" style="position:relative; bottom: 20px;">
-                <p class=""><a class="btn btn-primary btn-lg" role="button" href="cakes/create">New cake</a></p>
+                
             {{$cakes->links()}}
         </div>
         <div class="kanban">

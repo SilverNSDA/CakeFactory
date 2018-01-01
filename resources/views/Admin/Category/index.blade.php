@@ -1,17 +1,17 @@
 @extends('Admin\header')
 @section('body')
-    <h2>Cakes list</h2>
+    <h2>Categories list</h2>
     <div class="div-space"></div>
+    <p class=""><a class="btn btn-primary btn-lg" role="button" href="categories/create">New category</a></p>
     @if(count($cates)>0)
         <div class="col-12" style="position:relative; bottom: 20px;">
-                <p class=""><a class="btn btn-primary btn-lg" role="button" href="categories/create">New cate</a></p>
             {{$cates->links()}}
         </div>
         <div class="kanban">
                 @foreach($cates as $cate)
                 <div class="tag-border" style="width:200px; height:100px;">
-                    <h2>{{$cate->name}}</h2>
-                    <small>{{$cate->tag}}</small>
+                    <a style="font-size:20px;">{{$cate->name}}</a>
+                    <a style="font-size:10px; font-weight:400;line-height:12px;">{{$cate->tag}}</a>
                     @if($cate->description)
                     <span class="description">{{$cate->description}}</span>
                     @endif
@@ -21,7 +21,7 @@
         </div>
         
     @else
-        <span class="error"><i class="fa fa-exclamation-triangle"></i> NO cates created</span>
+        <span class="error"><i class="fa fa-exclamation-triangle"></i> NO category created</span>
     @endif
 @endsection
 

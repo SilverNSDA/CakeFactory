@@ -7,6 +7,10 @@ use App\Category;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('Admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -27,7 +31,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view('Admin\Catesgory\create');
+        return view('Admin/Category/create');
     }
 
     /**
@@ -49,7 +53,7 @@ class CategoryController extends Controller
         $cate->tag=$request->input('tag');
         $cate->description=$request->input('description');
         $cate->save();
-        return redirect('Admin/Categories')->with('success','Category created');
+        return redirect('admin/categories')->with('success','Category created');
     }
 
     /**
