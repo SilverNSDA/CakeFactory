@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
 
 class CategoryController extends Controller
 {
@@ -14,6 +15,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
+        $cates = Category::orderBy('name','desc')->paginate(10);
+        return view('Admin/Category/index')->with('cates',$cates);
     }
 
     /**
@@ -24,6 +27,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view('Admin\Catesgory\create');
     }
 
     /**
@@ -35,6 +39,17 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+            'name'=>'required',
+            'tag'=>'required'
+
+        ]);
+        $cate=new Category;
+        $cate->name=$request->input('name');
+        $cate->tag=$request->input('tag');
+        $cate->description=$request->input('description');
+        $cate->save();
+        return redirect('Admin/Categories')->with('success','Category created');
     }
 
     /**
@@ -46,6 +61,8 @@ class CategoryController extends Controller
     public function show($id)
     {
         //
+        $cate=Category::find($id);
+        return view('Admin.Category.show')->with('cate',$cate);
     }
 
     /**
@@ -57,6 +74,8 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
+        $cate=Category::find($id);
+        return view('Admin.Category.edit')->with('cate',$cate);
     }
 
     /**
@@ -69,6 +88,17 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request,[
+            'name'=>'required',
+            'tag'=>'required'
+
+        ]);
+        $cate=Category::find($id);
+        $cate->name=$request->input('name');
+        $cate->tag=$request->input('tag');
+        $cate->description=$request->input('description');
+        $cate->save();
+        return redirect('Admin/Categories')->with('success','Category updated');
     }
 
     /**
@@ -80,5 +110,8 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+        $cate=Category::find($id);
+        $cate->delete();
+        return redirect('admin/categories')->with('success','Category deleted');
     }
 }
