@@ -8,6 +8,6 @@ class Chefs extends Model
 {
     //
     public function cakes(){
-        return $this->hasMany('App/cakes');
+        return $this->hasMany('App\cakes');
     }
 }

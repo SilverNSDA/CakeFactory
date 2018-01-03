@@ -16,17 +16,17 @@ class CreateCakesTable extends Migration
         Schema::create('cakes', function (Blueprint $table) {
             $table->increments('id');
             $table->char('name',50);
-            $table->char('base_type',50);
+            // $table->char('base_type',50);
             $table->text('description');
             // $table->integer('category');
             $table->integer('in_storage')->default(0);
             $table->float('price',8,2)->nullable();
             $table->timestamps();
         });
-        Artisan::call('db:seed',[
-            '--class'=>'CakesSeeder',
-            '--force'=>True
-        ]);
+        // Artisan::call('db:seed',[
+        //     '--class'=>'CakesSeeder',
+        //     '--force'=>True
+        // ]);
     }
 
     /**

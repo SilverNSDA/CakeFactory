@@ -20,7 +20,7 @@ class CreateChefsTable extends Migration
             $table->string('Middlename',10)->charset('utf8')->nullable();
             $table->char('Title',5)->nullable();
             $table->char('Mobile',15)->nullable();
-            $table->char('Home_phone',15)->nullable();
+            $table->char('Home_phone',30)->nullable();
             $table->char('Fax',20)->nullable();
             $table->string('Address1',100)->charset('utf8')->nullable()->comment('address line 1: #,street,area');
             $table->string('Address2',100)->charset('utf8')->nullable()->comment('address line 2: city,zip,country');

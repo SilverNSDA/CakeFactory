@@ -8,6 +8,6 @@ class Category extends Model
 {
     //
     public function cakes(){
-        return $this->belongToMany('App/cakes');
+        return $this->belongsToMany('App\cakes');
     }
 }

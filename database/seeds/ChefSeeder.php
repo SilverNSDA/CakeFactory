@@ -12,5 +12,6 @@ class ChefSeeder extends Seeder
     public function run()
     {
         //
+        $chefs= factory(App\Chefs::class, 5)->create();
     }
 }
