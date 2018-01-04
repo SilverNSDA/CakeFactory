@@ -20,10 +20,10 @@ class CreateCategoriesTable extends Migration
             $table->text('description')->nullable();
             $table->timestamps();
         });
-        Artisan::call('db:seed',[
-            '--class'=>'DatabaseSeeder',
-            '--force'=>True
-        ]);
+        // Artisan::call('db:seed',[
+        //     '--class'=>'DatabaseSeeder',
+        //     '--force'=>True
+        // ]);
     }
 
     /**

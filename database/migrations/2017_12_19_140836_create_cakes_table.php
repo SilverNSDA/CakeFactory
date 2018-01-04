@@ -21,6 +21,7 @@ class CreateCakesTable extends Migration
             // $table->integer('category');
             $table->integer('in_storage')->default(0);
             $table->float('price',8,2)->nullable();
+            $table->integer('chefs_id')->nullable();
             $table->timestamps();
         });
         // Artisan::call('db:seed',[

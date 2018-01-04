@@ -9,10 +9,10 @@
         </div>
         <div class="kanban">
                 @foreach($chefs as $chef)
-                <div class="tag-border" style="width:300px; height:100px;">
+                <div class="tag-border" style="width:400px; height:100px;">
                     <h2>{{$chef->title}} {{$chef->Firstname}} {{$chef->Middlename}} {{$chef->Lastname}}</h2>
-                    <small>{{$chef->Mobile}}</small>
-                    <a>{{$chef->Address1}}</a>
+                    <small>{{$chef->Mobile}}</small><br>
+                    <a>{{$chef->Address1}}</a><br>
                     <a>{{$chef->Address2}}</a>
                     <p class="bottom"><a class="btn btn-secondary" role="button" href="chefs/{{$chef->id}}">View details »</a></p>
                 </div>

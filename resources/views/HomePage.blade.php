@@ -1,2 +1,0 @@
-
-@extends('customer-side.home')

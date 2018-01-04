@@ -8,9 +8,12 @@ class cakes extends Model
 {
     //
     public function chef(){
-        return $this->belongTo('App\Chefs');
+        return $this->belongsTo('App\Chefs');
     }
     public function categories(){
         return $this->belongsToMany('App\Category');
+    }
+    public function comments(){
+        return $this->hasMany('App\Comment');
     }
 }
