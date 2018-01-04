@@ -20,7 +20,6 @@
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
-                height: 100vh;
                 margin: 0;
             }
 
@@ -71,22 +70,24 @@
         <div class="left-space"></div>
         <div class="right-space"></div>
         <div class="top-space"></div>
-        @include('include/navigation')
-        <hr>
-        <div style="min-height:300px;">
-            @yield('body')
-        </div>
-        <hr>
-        <div id="footer" style="bottom:0px; font-weight:500; color:rgb(30,30,30);">
-            <div class="center under-line">
-                About us
+        <div class="container">
+            @include('include/navigation')
+            <hr>
+            <div style="min-height:300px;">
+                @yield('body')
             </div>
-            <div class="container">
-                <div class="col-sm-3" style="display:inline-block;">
-                    Hope you please with our service
+            <hr>
+            <div id="footer" style="bottom:0px; font-weight:500; color:rgb(30,30,30);">
+                <div class="center under-line">
+                    About us
                 </div>
-                <div class="col-sm-7" style="text-align:right;float:right;">
-                    <a style="text-align:left;">Made by 1560008</a>
+                <div class="container">
+                    <div class="col-sm-3" style="display:inline-block;">
+                        Hope you please with our service
+                    </div>
+                    <div class="col-sm-7" style="text-align:right;float:right;">
+                        <a style="text-align:left;">Made by 1560008</a>
+                    </div>
                 </div>
             </div>
         </div>

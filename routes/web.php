@@ -29,6 +29,7 @@ Route::resource('/admin/cakes', 'CakesController');
 Route::resource('/admin/chefs', 'ChefsController');
 Route::resource('/admin/categories', 'CategoryController');
 Route::resource('/cart','CartController');
+Route::get('/cakes/{id}','CustomerController@show');
 // Route::resource('/admin/user', 'UserController');
 Route::get('/logout','HomeController@logout');
 Route::get('/404',function(){

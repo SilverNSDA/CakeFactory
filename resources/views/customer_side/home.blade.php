@@ -25,7 +25,7 @@
                     @guest
                         <a href="/cart" class="btn btn-primary btn-lg" style="float:right;">Add to cart</a>
                     @endguest
-                    <a href="" class="btn btn-secondary btn-lg"style="float:right;">Read more</a>
+                    <a href="cakes/{{$cake->id}}" class="btn btn-secondary btn-lg"style="float:right;">Read more</a>
                 </div>
             </div>
             {{--  <div class="kanban-content">
