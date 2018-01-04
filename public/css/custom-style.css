@@ -242,3 +242,9 @@ a.del-button::after > a {
     z-index:10;
 }
 
+div.home-kanban >div.kanban-content {
+    display:none;
+}
+div.home-kanban:hover > div.kanban-content {
+    display: block;
+}

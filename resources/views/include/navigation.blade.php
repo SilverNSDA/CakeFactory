@@ -3,7 +3,7 @@
         <div class="top-left links">
             <a class="navbar-brand">Cake Factory</a>
             <a href="/home">Home</a>
-            <a href="/shop">Shop </a>
+            {{--  <a href="/shop">Shop </a>  --}}
             <a href="/cart">Cart</a>
             <a class="scroll" href="#footer">About</a>
         </div>

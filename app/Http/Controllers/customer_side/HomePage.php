@@ -12,6 +12,8 @@ class HomePage extends Controller
     //
     public function index(){
 
+        $cakes=cakes::paginate(6);
+        return view('customer_side.home')->with('cakes',$cakes);
 
     }
 }
