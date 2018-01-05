@@ -73,7 +73,7 @@
         <div class="container">
             @include('include/navigation')
             <hr>
-            <div style="min-height:300px;">
+            <div style="min-height:70vh;">
                 @yield('body')
             </div>
             <hr>

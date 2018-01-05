@@ -29,5 +29,7 @@ class DatabaseSeeder extends Seeder
             });
             $u->cakes()->saveMany($cakes);
         });
+
+        $cart = factory(App\Cart::class,4)->create();
     }
 }

@@ -17,7 +17,7 @@
                     <p class="card-text" style="font-weight:500;">Price:{{$cake->price}}$</p>
                     @auth
                     {!! Form::open(['action'=>'CartController@store','method'=>'POST']) !!}                    
-                    {!! Form::text('user_id', Auth::user()->get()->id, ['style'=>'display:none;']) !!}
+                    {!! Form::text('user_id', Auth::user()->id, ['style'=>'display:none;']) !!}
                     {!! Form::text('cakes_id', $cake->id, ['style'=>'display:none;']) !!}
                     {!! Form::submit('Add to cart', ['class'=>'btn btn-primary btn-lg','style'=>'float:right;']) !!}                    
                     {!! Form::close() !!}

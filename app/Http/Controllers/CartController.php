@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Cart;
 use App\cakes;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -20,6 +21,10 @@ class CartController extends Controller
     public function index()
     {
         //
+        $cart = Cart::with(['owner'=>function($user){
+            $user->find(Auth::user()->id);
+        }])->get();
+        return view('customer_side.index')->with('cart',$cart);
     }
 
     /**
@@ -104,5 +109,8 @@ class CartController extends Controller
     public function destroy($id)
     {
         //
+        $cart= Cart::find($id);
+        $cart->delete();
+        return redirect('/cart');
     }
 }
