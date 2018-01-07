@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Cart;
 use App\cakes;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\URL;
 
 class CartController extends Controller
 {
@@ -49,8 +50,9 @@ class CartController extends Controller
         $count =0;
         $user_id=$request->input('user_id');
         $cakes_id=$request->input('cakes_id');
-        if(Cart::find($user_id,$cakes_id)){
-            $cart=Cart::find($user_id,$cakes_id);
+        $cart = Cart::where('user_id',$user_id)->where('cakes_id',$cakes_id)->get();
+        if(!$cart->isEmpty()){
+            $cart=$cart->first();
             $cart->amount+=1;
             $cart->save();
             $count=$cart->amount;
@@ -63,7 +65,7 @@ class CartController extends Controller
             $cart->save();
             $count=$cart->amount;
         }
-        return redirect('/')->with('success','Cart now has {{$count}} {{cakes::find($cakes_id)->name}} ');
+        return redirect()->to(URL::previous().'#kanban')->with('success','Cart now has '.$count.' '.cakes::find($cakes_id)->name);
     }
 
     /**
@@ -106,11 +108,24 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function del($id){
+        $cart= Cart::find($id);
+        $cart->delete();
+        return True;
+    }
     public function destroy($id)
     {
         //
-        $cart= Cart::find($id);
-        $cart->delete();
+        $this->del($id);
+        return redirect('/cart');
+    }
+    public function clearCart($id){
+
+        $items=Cart::where('user_id',$id)->get();
+        foreach($items as $item){
+            
+            $this->del($item->id);
+        }
         return redirect('/cart');
     }
 }

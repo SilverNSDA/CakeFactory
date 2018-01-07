@@ -3,7 +3,7 @@
     <div class='container'>
         <h2>Our offer</h2>
         {{$cakes->links()}}
-        <div class="home-kanban">
+        <div id="kanban" class="home-kanban">
         @foreach($cakes as $cake)
             <div class="card" style="width:30rem; display:inline-block;">
                 <img class="card-img-top" src="http://via.placeholder.com/300x180"/>

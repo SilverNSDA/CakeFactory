@@ -15,6 +15,7 @@
                 <th scope="col">Price</th>
                 <th scope="col">Amount</th>
                 <th scope="col">Total</th>
+                <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -30,16 +31,34 @@
                 <td>{{$item->price}}</td>
                 <td>{{$row->amount}}</td>
                 <td>{{$item->price*$row->amount}} $</td>
+                <td>
+                    
+                    {!! Form::open(['action'=>['CartController@destroy',$row->id],'method'=>'POST']) !!}
+                    {!! Form::hidden('_method', 'DELETE') !!}
+                    
+                    {!! Form::button('<i class="fa fa-times"></i>', ['type'=>'submit','class'=>'x-icon','title'=>'Delete item']) !!}
+                    
+                    {!! Form::close() !!}
+                    
+                    
+                </td>
                 </tr>
                 @endforeach
                 <tr>
                     <th scope="row" colspan="3"></th>
                     <td>Total:</td>
                     <td>{{$total}} $</td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
-        <a role="button" class="btn btn-primary btn-lg" style="color:rgb(255,255,255);float:right;">Purchase</a> 
-        <a role="button" class="btn btn-secondary btn-lg" style="color:rgb(255,255,255);float:right;">Clear cart</a>
+        <a role="button" class="btn btn-primary btn-lg incomplete" style="color:rgb(255,255,255);float:right;" title="This is an incomplete feature">Purchase</a>
+        <div><a><i class="fa fa-exclamation-triangle" style="color:red; font-size:25px;"></i> This is an incomplete feature</a></div> 
+        {{--  <a role="button" class="btn btn-secondary btn-lg" style="color:rgb(255,255,255);float:right;">Clear cart</a>  --}}
+        {!! Form::open(['action'=>['CartController@clearCart',Auth::user()->id],'method'=>'POST']) !!}
+        {!! Form::hidden('_method', 'DELETE') !!}
+        {!! Form::submit('Clear cart',['class'=>'btn btn-sencondary btn-lg clear-cart', 'style'=>'color:rgb(30,30,30);float:right;']) !!}
+        {!! Form::close() !!}
+        
     </div>
 @endsection

@@ -260,3 +260,42 @@ div.home-kanban:hover > div.kanban-content {
     text-decoration: none;
     text-transform: uppercase;
 }
+.x-icon {
+    border: none;
+    background-color: rgba(255,255,255,0);
+
+}
+.x-icon:hover {
+    color:red;
+}
+.clear-cart:hover {
+    background-color: rgb(110,110,110);
+    font-weight: 600;
+    color: rgb(200,200,200) !important;
+}
+a.incomplete + div {
+    display:none;
+    background-color: rgb(255,255,255);
+    border-style: groove;
+    border-radius: 2rem;
+    border-color: red;
+}
+a.incomplete:hover + div{
+    position: absolute;
+    height: 50px;
+    width: 500px;
+    text-align: center;
+    
+    display:block;
+    z-index:10;
+}
+a.incomplete + div >a {
+    line-height: 5rem;
+}
+.err {
+    position:fixed !important;
+    top:0;
+    z-index:10;
+    left:30%;
+    text-align:center;
+}

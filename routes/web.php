@@ -35,4 +35,4 @@ Route::get('/logout','HomeController@logout');
 Route::get('/404',function(){
     return view('404');
 });
-
+Route::delete('/cart/user/{id}/delete','CartController@clearCart');
