@@ -19,12 +19,14 @@
         @endif
     </div>
     <ul class="list-unstyled la">
-        @foreach($cake->comments()->get() as $comment)
+        @foreach($cake->comments()->orderBy('updated_at','desc')->get() as $comment)
         <li class="media"style="position: relative;">
             <img class="mr-3" src="http://via.placeholder.com/64x64" title="{{$comment->user()->get()[0]->name}}">
             <div class="media-body">
             <h5 class="mt-0 mb-1">{{$comment->title}}</h5>
-            {{$comment->body}}
+            <p>{{$comment->body}}</p>
+            <small>Created at:{{$comment->created_at}}</small>
+            <small>Last update: {{$comment->updated_at}}</small>
             </div>
         </li>
         @endforeach
