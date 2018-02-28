@@ -18,8 +18,9 @@
         <p>Status: <span class="badge badge-danger">Sold out</span></p>
         @endif
     </div>
+    {{$comments->links()}}
     <ul class="list-unstyled la">
-        @foreach($cake->comments()->orderBy('updated_at','desc')->get() as $comment)
+        @foreach($comments as $comment)
         <li class="media"style="position: relative;">
             <img class="mr-3" src="http://via.placeholder.com/64x64" title="{{$comment->user()->get()[0]->name}}">
             <div class="media-body">

@@ -5,7 +5,7 @@
         {{$cakes->links()}}
         <div id="kanban" class="home-kanban">
         @foreach($cakes as $cake)
-            <div class="card" style="width:30rem; display:inline-block;">
+            <div class="card" style="width:30rem; display:inline-block; ">
                 <img class="card-img-top" src="http://via.placeholder.com/300x180"/>
                 <div class="card-body">
                     <h5>{{$cake->name}}</h5>
@@ -25,7 +25,7 @@
                     @guest
                         <a href="/cart" class="btn btn-primary btn-lg" style="float:right;">Add to cart</a>
                     @endguest
-                    <a href="cakes/{{$cake->id}}" class="btn btn-secondary btn-lg"style="float:right;">Read more</a>
+                    <a href="cakes/{{$cake->id}}" class="btn btn-secondary btn-sm"style="float:left;">Read more</a>
                 </div>
             </div>
             {{--  <div class="kanban-content">

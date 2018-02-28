@@ -11,6 +11,7 @@ class CustomerController extends Controller
     //
     public function show($id){
         $cake=cakes::find($id);
-        return view('customer_side.show')->with('cake',$cake);
+        $comments = $cake->comments()->orderBy('updated_at','desc')->paginate(3);
+        return view('customer_side.show',['cake'=>$cake, 'comments'=>$comments]);
     }
 }
