@@ -33,4 +33,7 @@ class User extends Authenticatable
     public function carts(){
         return $this->hasMany('App\Cart');
     }
+    public function profile(){
+        return $this->hasOne('App\Profile');
+    }
 }

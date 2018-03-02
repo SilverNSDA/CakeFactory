@@ -14,7 +14,9 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         $n=[1,2,3,4,5];
         foreach( $n as $i){
-            $user=factory(App\User::class)->create(['id'=>100+$i]);
+            $user=factory(App\User::class)->create(['id'=>100+$i])->each(function($p){
+                $p->profile()->save(factory(App\Profile::class)->create());
+            });
         } 
         $chefs= factory(App\Chefs::class, 5)->create()->each(function($u){
             $cakes =factory(App\cakes::class, 4)->create()->each(function($u){
